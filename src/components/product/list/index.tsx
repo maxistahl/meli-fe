@@ -1,5 +1,9 @@
 import React from "react";
-import { Product } from "./types";
+import { Product } from "../types";
+import "./styles.scss";
+import Price from "../price";
+import FreeShipping from "../freeShipping";
+import { Link } from "react-router-dom";
 
 type ProductListProps = {
   products: Product[];
@@ -10,12 +14,11 @@ const Item = (product: Product) => {
     <li>
       <img src={product.picture} alt={product.title} />
       <div className="item-details">
-        <div className="price">
-          <span className="currency">{product.price.currency}</span>
-          <span className="amount">{product.price.amount}</span>
-        </div>
-        <p>{product.title}</p>
-        {product.free_shipping && <span className="free-shipping">Envío gratis</span>}
+        <Price price={product.price} />
+        <Link className="title" to={`/items/${product.id}`} title={product.title}>
+          <h3>{product.title}</h3>
+        </Link>
+        <FreeShipping show={product.free_shipping} />
       </div>
     </li>
   );
@@ -23,7 +26,7 @@ const Item = (product: Product) => {
 
 const ProductList = ({ products }: ProductListProps) => {
   return (
-    <ul>
+    <ul className="product-list">
       {products.map((product) => (
         <Item key={product.id} {...product} />
       ))}
