@@ -1,0 +1,89 @@
+$white: rgb(255, 255, 255);
+$yellow: rgb(255, 230, 0);
+$grey-1: rgb(235, 235, 235);
+$grey-3: rgba(0, 0, 0, 0.2);
+$grey-4: rgba(0, 0, 0, 0.9);
+$black: rgb(0, 0, 0);
+$blue: rgb(52, 131, 250);
+
+$size-1: 4px;
+$size-2: 8px;
+$size-3: 16px;
+$size-4: 32px;
+$size-5: 64px;
+
+$font-size: (
+  h1: 3.2em,
+  h2: 2.4em,
+  h3: 1.8em,
+  h4: 1.4em,
+  h5: 1.2em,
+  h6: 16px,
+  p: 16px,
+  small: 14px
+);
+
+$font-weight: (
+  light: 300,
+  regular: 400,
+  medium: 500,
+  bold: 700
+);
+
+$spacing: (
+  xs: 0.4em,
+  sm: 0.8em,
+  md: 1.6em,
+  lg: 3.2em,
+  xl: 6.4em
+);
+
+$border-radius: (
+  sm: 4px,
+  md: 6px,
+  lg: 12px
+);
+
+$transition: (
+  fast: 0.15s,
+  default: 0.25s,
+  slow: 0.35s
+);
+
+$shadow: (
+  sm: 0 2px 4px rgba(0, 0, 0, 0.1),
+  md: 0 4px 8px rgba(0, 0, 0, 0.1),
+  lg: 0 8px 16px rgba(0, 0, 0, 0.1)
+);
+
+$breakpoint: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+@mixin respond-to($selected) {
+  @if map-has-key($breakpoint, $selected) {
+    @media (min-width: map-get($breakpoint, $selected)) {
+      @content;
+    }
+  }
+
+  @else {
+    @warn "Unknown breakpoint: #{$selected}.";
+  }
+}
+
+$color: (
+  primary: #646cff,
+  secondary: #535bf2,
+  background: #ffffff,
+  text: #213547,
+  link: #646cff,
+  link-hover: #747bff,
+  button: #1a1a1a,
+  button-hover: #646cff,
+  button-focus: #646cff,
+  button-focus-visible: #646cff
+);

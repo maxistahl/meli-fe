@@ -1,0 +1,16 @@
+@import '../../styles/variables.scss';
+
+.header {
+  display: block;
+  padding: $size-2 0;
+  background-color: $yellow;
+  width: 100%;
+
+  .inner {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    grid-template-areas: 'logo' 'search';
+    column-gap: $size-3;
+  }
+}
