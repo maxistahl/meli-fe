@@ -68,7 +68,7 @@ export const getItemById = async (id: string): Promise<ProductDetailsResponse> =
       picture: item.pictures[0]?.url,
       condition: item.condition === 'new' ? 'Nuevo' : 'Usado',
       free_shipping: item.shipping.free_shipping,
-      sold_quantity: item.sold_quantity,
+      sold_quantity: item.sold_quantity || 0,
       description: description.plain_text
     };
 

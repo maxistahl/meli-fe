@@ -41,7 +41,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    padding: map-get($spacing, sm);
+    padding: 8px;
     border: none;
     background-color: transparent;
     color: $grey-4;
@@ -65,6 +65,11 @@
       top: 50%;
       left: 0;
       transform: translateY(-50%);
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
     }
   }
 }

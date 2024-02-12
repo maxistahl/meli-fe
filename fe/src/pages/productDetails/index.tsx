@@ -1,4 +1,4 @@
-import ProductDetails from "../../components/product/details";
+import ProductDetails from "../../components/product/details/";
 import Breadcrumb from "../../components/breadcrumb";
 import Content from "../../components/content";
 import { useParams } from "react-router";

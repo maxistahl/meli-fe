@@ -15,12 +15,12 @@ $size-4: 32px;
 $size-5: 64px;
 
 $font-size: (
-  h1: 1.2rem,
-  h2: 1.1rem,
-  h3: 1.05rem,
-  h4: 1.03rem,
+  h1: 2rem,
+  h2: 1.6rem,
+  h3: 1.3rem,
+  h4: 1.2rem,
   h5: 1.1rem,
-  h6: 1rem,
+  h6: 1.05rem,
   p: 1rem,
   small: 0.9rem
 );
@@ -28,7 +28,6 @@ $font-size: (
 $font-weight: (
   light: 300,
   regular: 400,
-  medium: 500,
   bold: 600
 );
 
@@ -67,7 +66,7 @@ $breakpoint: (
 
 @mixin respond-to($selected) {
   @if map-has-key($breakpoint, $selected) {
-    @media (min-width: map-get($breakpoint, $selected)) {
+    @media (max-width: map-get($breakpoint, $selected)) {
       @content;
     }
   }

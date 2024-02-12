@@ -21,7 +21,7 @@ const Item = (product: Product) => {
       <div className="item-details">
         <Price price={product.price} />
         <Link className="title" to={`/items/${product.id}`} title={product.title}>
-          <h3>{product.title}</h3>
+          <h4>{product.title}</h4>
         </Link>
         <FreeShipping show={product.free_shipping} />
       </div>

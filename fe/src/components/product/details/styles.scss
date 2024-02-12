@@ -1,0 +1,68 @@
+@import "../../../styles/variables.scss";
+
+.product-details {
+  display: grid;
+  grid-template-areas: "description purchase";
+  grid-template-columns: 2fr 1fr;
+
+  @include respond-to(sm) {
+    grid-template-columns: 1fr;
+  }
+
+  .description {
+    grid-area: description;
+    padding: 1em;
+
+    .image img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .details {
+      h2 {
+        font-size: map-get($font-size, h4);
+        font-weight: map-get($font-weight, regular);
+        line-height: 1;
+      }
+
+      p {
+        font-size: map-get($font-size, p);
+        line-height: 1.5;
+      }
+    }
+  }
+
+  .purchase {
+    grid-area: purchase;
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    border-radius: 8px;
+    gap: 1em;
+
+    h1 {
+      font-size: map-get($font-size, h3);
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .price {
+      font-size: map-get($font-size, h1);
+      line-height: 1;
+      margin-bottom: $size-4;
+    }
+
+    .cta {
+      background-color: $blue;
+      border-color: transparent;
+      color: $white;
+      transition: background-color .2s ease-in;
+      font-weight: map-get($font-weight, bold);
+      font-size: map-get($font-size, p);
+
+      &:hover {
+        background-color: darken($blue, 10%);
+      }
+    }
+  }
+}

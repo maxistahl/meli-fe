@@ -1,0 +1,16 @@
+@import '../../../styles/variables.scss';
+
+.price {
+  line-height: 1;
+  font-weight: map-get($font-weight, light);
+
+  .currency {
+    padding-right: 0.2em;
+  }
+
+  .amount .subset {
+    vertical-align: top;
+    font-size: 0.8em;
+    padding-left: 0.2rem;
+  }
+}

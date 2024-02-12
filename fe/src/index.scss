@@ -3,9 +3,11 @@
 :root {
   font-family: Proxima Nova, -apple-system, Roboto, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  font-weight: map-get($font-weight, regular);
+  font-size: 16px;
 
   color-scheme: light dark;
+  box-sizing: border-box;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,7 +16,6 @@
 }
 
 a {
-  font-weight: 400;
   color: $blue;
   text-decoration: inherit;
   transition: color map-get($transition, default);
@@ -29,6 +30,7 @@ body {
   min-height: 100vh;
   background-color: $grey-1;
   color: $black;
+  font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif, sans-serif;
 }
 
 h1 {

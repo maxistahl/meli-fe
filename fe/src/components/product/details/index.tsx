@@ -1,5 +1,7 @@
-import ErrorUI from "../error";
-import { ProductDetails } from "./types";
+import ErrorUI from "../../error";
+import Price from "../price";
+import { ProductDetails } from "../types";
+import "./styles.scss";
 
 type ProductDetailsProps = {
   product: ProductDetails | null;
@@ -17,9 +19,11 @@ const ProductDetails = ({ product, loading }: ProductDetailsProps) => {
 
   if (product) {
     return (
-      <div className="prooduct-details">
+      <div className="product-details">
         <div className="description">
-          <img src={product.picture} alt={product.title} />
+          <div className="image">
+            <img src={product.picture} alt={product.title} />
+          </div>
           <div className="details">
             <h2>Descripcion del producto</h2>
             <p>{product.description}</p>
@@ -27,18 +31,11 @@ const ProductDetails = ({ product, loading }: ProductDetailsProps) => {
         </div>
         <div className="purchase">
           <div className="status">
-            <span>{product.condition}</span>
-            <span>{product.sold_quantity} vendidos</span>
+            <span>{product.condition} | {product.sold_quantity} vendidos</span>
           </div>
           <h1>{product.title}</h1>
-          <div className="price"
-            aria-label={`${product.price.amount} ${product.price.currency}`}
-            aria-roledescription="Precio"
-          >
-            <span className="currency">{product.price.currency}</span>
-            <span className="amount">{product.price.amount}</span>
-          </div>
-          <button>Comprar</button>
+          <Price price={product.price} />
+          <button className="cta">Comprar</button>
         </div>
       </div>
     );
