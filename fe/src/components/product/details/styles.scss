@@ -52,17 +52,5 @@
       margin-bottom: $size-4;
     }
 
-    .cta {
-      background-color: $blue;
-      border-color: transparent;
-      color: $white;
-      transition: background-color .2s ease-in;
-      font-weight: map-get($font-weight, bold);
-      font-size: map-get($font-size, p);
-
-      &:hover {
-        background-color: darken($blue, 10%);
-      }
-    }
   }
 }

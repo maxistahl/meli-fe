@@ -1,0 +1,14 @@
+@import '../../styles/variables.scss';
+
+.home-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50dvh;
+
+  p.first-message {
+    color: lighten($grey-4, 55%);
+    font-size: map-get($font-size, p);
+    text-shadow: 0 1px 0 $white;
+  }
+}

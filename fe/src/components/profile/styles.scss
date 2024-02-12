@@ -1,0 +1,102 @@
+@import '../../styles/variables.scss';
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  .avatar {
+    position: relative;
+
+    .message {
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translate(25%, -40%);
+      transition: transform .2s ease-in-out;
+
+      p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -60%);
+        margin: 0;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+
+  img {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 1px solid $grey-1;
+    box-shadow: 0 0 0 1px $grey-4;
+  }
+
+  h1 {
+    font-size: map-get($font-size, h1);
+    line-height: 1;
+    margin: 0;
+  }
+
+  p {
+    font-size: map-get($font-size, p);
+  }
+
+  .buttons-group {
+    position: relative;
+    z-index: 1;
+
+    .like {
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translate(calc(50dvw - 100% - 0.5rem), 50dvh);
+    }
+
+    .dislike {
+      position: fixed;
+      top: 0;
+      left: 0;
+      transform: translate(calc(50dvw + 0.5rem), 50dvh);
+      background-color: rgba(65, 137, 230, .15);
+      color: $blue;
+      transition: transform .2s ease-in-out;
+    }
+  }
+
+  canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    animation: canvasAnimation 4s ease-in-out;
+    animation-fill-mode: forwards;
+  }
+}
+
+@keyframes canvasAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  20% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}

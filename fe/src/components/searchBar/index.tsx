@@ -1,15 +1,16 @@
-import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './styles.scss';
 import SearchIcon from './assets/searchIcon';
+import useNavAndSearch, { NavAndSearchType } from '../../context/useNavAndSearch';
 
-function SearchBar({ value = "" }: { value?: string }) {
-  const [query, setQuery] = useState(value);
+function SearchBar() {
+  const { searchValue, setSearchValue, setWasNavigated } = useNavAndSearch() as NavAndSearchType;
   const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    navigate(`/items?search=${encodeURIComponent(query)}`);
+    setWasNavigated(true);
+    navigate(`/items?search=${encodeURIComponent(searchValue)}`);
   };
 
   return (
@@ -18,8 +19,8 @@ function SearchBar({ value = "" }: { value?: string }) {
       <input
         id="cb1-edit"
         type="text"
-        value={query}
-        onChange={(event) => setQuery(event.target.value)}
+        value={searchValue}
+        onChange={(event) => setSearchValue(event.target.value)}
         placeholder='Buscar productos, marcas y más…'
         autoComplete='off'
         spellCheck='false'

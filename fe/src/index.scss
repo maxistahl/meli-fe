@@ -15,6 +15,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: $grey-1;
+  color: $black;
+  font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif, sans-serif;
+}
+
 a {
   color: $blue;
   text-decoration: inherit;
@@ -25,38 +33,35 @@ a:hover {
   color: dark($blue, 10%);
 }
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  background-color: $grey-1;
-  color: $black;
-  font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif, sans-serif;
-}
-
 h1 {
   font-size: map-get($font-size, h1);
   line-height: 1.1;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+  background-color: $blue;
+  border-color: transparent;
+  color: $white;
+  transition: background-color .2s ease-in;
+  font-weight: map-get($font-weight, bold);
+  font-size: map-get($font-size, p);
+  border-radius: 6px;
+  padding: 0.6em 1em;
+  min-width: 120px;
+
+  &:hover {
+    background-color: darken($blue, 10%);
+  }
+
+  &:focus {
+    outline: none;
+  }
 }
 
-button:hover {
-  border-color: #646cff;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.buttons-group {
+  display: flex;
+  align-items: center;
+  gap: 1em;
 }
 
 @media (prefers-color-scheme: light) {

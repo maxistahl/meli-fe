@@ -51,6 +51,11 @@
     width: 48px;
     height: 100%;
     box-sizing: border-box;
+    min-width: auto;
+
+    &:hover {
+      background-color: transparent;
+    }
 
     &:focus {
       outline: none;
