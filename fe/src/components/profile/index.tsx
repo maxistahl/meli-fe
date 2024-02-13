@@ -20,7 +20,7 @@ const Profile: FC = () => {
       <div className="avatar">
         {showAnim === 2 && <Isay text="Me gustaría trabajar en MeLi..." />}
         {showAnim === 3 && <Isay text="¿Me ayudas?" />}
-        <img src={profilePicture} alt="Maxi Stahl" />
+        <img role="img" src={profilePicture} alt="Maxi Stahl" />
       </div>
       <h1>Maximiliano Stahl</h1>
       <a href="mailto:maxistahl@gmail.com">maxistahl@gmail.com</a>
@@ -59,11 +59,12 @@ const LikeDislikeButtons: FC<LikeDislikeButtonsProps> = ({ onClick }) => {
 
   return (
     <div className="buttons-group">
-      <button className="like" onClick={handleClick}>Like</button>
+      <button className="like" role="cta" onClick={handleClick}>Like</button>
       <button
         className="dislike"
         onMouseEnter={handleMouseEnter}
         style={jump}
+        role="no-button"
       >
         Dislike
       </button>

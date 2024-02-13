@@ -25,6 +25,7 @@ function SearchBar() {
         autoComplete='off'
         spellCheck='false'
         autoCorrect='off'
+        role='textbox'
       />
       <button type="submit">
         <SearchIcon />
