@@ -11,9 +11,9 @@ const Price = ({ price }: { price: Price }) => {
       aria-label={`${price.amount} ${price.currency}`}
       aria-roledescription="Precio"
       itemProp="offers" itemScope itemType="http://schema.org/Offer"
-      role="img"
+      role="price"
     >
-      <meta itemProp="price" content="1980" />
+      <meta itemProp="price" content={price.amount.toString()} />
       <span className="currency" itemProp="priceCurrency" aria-hidden="true">{price.currency}</span>
       <span className="amount" aria-hidden="true">{amount}<span className="subset">{decimal}</span></span>
     </div>

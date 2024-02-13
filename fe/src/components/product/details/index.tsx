@@ -22,7 +22,7 @@ const ProductDetails = ({ product, loading }: ProductDetailsProps) => {
       <div className="product-details">
         <div className="description">
           <div className="image">
-            <img src={product.picture} alt={product.title} />
+            <img role="img" src={product.picture} alt={product.title} />
           </div>
           <div className="details">
             <h2>Descripcion del producto</h2>

@@ -14,7 +14,7 @@ function SearchBar() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className='search-bar'>
+    <form onSubmit={handleSubmit} className='search-bar' role='search'>
       <label className="hidden" htmlFor="cb1-edit">Ingresá lo que quieras encontrar</label>
       <input
         id="cb1-edit"

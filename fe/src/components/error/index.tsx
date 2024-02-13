@@ -9,7 +9,7 @@ type ErrorUIProps = {
 
 const ErrorUI = ({ message, goHomeLinkText = "Ir a la página principal" }: ErrorUIProps) => {
   return (
-    <div className="error-ui">
+    <div className="error-ui" role="error-ui">
       <Laptop />
       <h2>{message}</h2>
       <Link to="/">{goHomeLinkText}</Link>

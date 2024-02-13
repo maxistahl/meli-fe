@@ -5,10 +5,10 @@ import "./styles.scss";
 
 const Header = () => {
   return (
-    <header className="header">
+    <header className="header" role="header">
       <Wrapper>
         <div className="inner">
-          <Link to="/">
+          <Link to="/" role="link">
             <div className="logo" />
           </Link>
           <SearchBar />

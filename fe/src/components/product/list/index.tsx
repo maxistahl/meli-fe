@@ -20,7 +20,7 @@ const Item = (product: Product) => {
       <img src={product.picture} alt={product.title} />
       <div className="item-details">
         <Price price={product.price} />
-        <Link className="title" to={`/items/${product.id}`} title={product.title}>
+        <Link className="title" role="item-link" to={`/items/${product.id}`} title={product.title}>
           <h4>{product.title}</h4>
         </Link>
         <FreeShipping show={product.free_shipping} />
