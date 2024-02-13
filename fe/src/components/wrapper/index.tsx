@@ -3,7 +3,7 @@ import "./styles.scss";
 
 const Wrapper = ({ children }: { children: ReactNode }) => {
   return (
-    <div className="wrapper">
+    <div className="wrapper" data-testid="wrapper">
       {children}
     </div>
   )
