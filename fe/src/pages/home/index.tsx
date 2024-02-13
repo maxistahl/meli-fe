@@ -7,7 +7,7 @@ const HomePage = () => {
   const { setSearchValue, wasNavigated } = useNavAndSearch() as NavAndSearchType;
 
   useEffect(() => {
-    setSearchValue('');
+    setSearchValue && setSearchValue('');
     window.scrollTo(0, 0);
   }, [setSearchValue]);
 

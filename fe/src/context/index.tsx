@@ -1,8 +1,8 @@
-import { createContext, useState } from 'react';
+import { ReactNode, createContext, useState } from 'react';
 
 const NavigationContext = createContext({});
 
-const NavigationProvider = ({ children }: { children: React.ReactNode }) => {
+const NavigationProvider = ({ children }: { children: ReactNode }) => {
   const [searchValue, setSearchValue] = useState('');
   const [wasNavigated, setWasNavigated] = useState(false);
 

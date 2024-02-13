@@ -1,7 +1,7 @@
-
+import { ReactNode } from "react";
 import "./styles.scss";
 
-const Wrapper = ({ children }) => {
+const Wrapper = ({ children }: { children: ReactNode }) => {
   return (
     <div className="wrapper">
       {children}

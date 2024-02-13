@@ -1,11 +1,11 @@
-import { useContext } from "react";
+import { Dispatch, SetStateAction, useContext } from "react";
 import { NavigationContext } from ".";
 
 export type NavAndSearchType = {
   searchValue: string;
-  setSearchValue: (value: string) => void;
+  setSearchValue: Dispatch<SetStateAction<string>>; //(value: string) => void;
   wasNavigated: boolean;
-  setWasNavigated: (value: boolean) => void;
+  setWasNavigated: Dispatch<SetStateAction<boolean>>; //(value: boolean) => void;
 }
 
 const useNavAndSearch = () => {
