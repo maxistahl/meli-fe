@@ -1,9 +1,9 @@
 import { ReactNode } from 'react';
 import './styles.scss';
 
-const Content = ({ children }: { children: ReactNode }) => {
+const Content = ({ children }: { children?: ReactNode }) => {
   return (
-    <div className='content'>
+    <div className='content' role='content'>
       {children}
     </div>
   );

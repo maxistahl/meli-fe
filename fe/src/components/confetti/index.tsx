@@ -60,7 +60,7 @@ function Confetti() {
     }
   }, []);
 
-  return <canvas ref={canvasRef} width={window.innerWidth} height={window.innerHeight} />;
+  return <canvas role='canvas' ref={canvasRef} width={window.innerWidth} height={window.innerHeight} />;
 }
 
 export default Confetti;
