@@ -21,12 +21,14 @@ body {
   background-color: $grey-1;
   color: $black;
   font-family: "Proxima Nova", -apple-system, Roboto, Arial, sans-serif, sans-serif;
+  font-size: map-get($font-size, p);
 }
 
 a {
   color: $blue;
   text-decoration: inherit;
   transition: color map-get($transition, default);
+  cursor: pointer;
 }
 
 a:hover {
@@ -48,9 +50,14 @@ button {
   border-radius: 6px;
   padding: 0.6em 1em;
   min-width: 120px;
+  cursor: pointer;
 
   &:hover {
     background-color: darken($blue, 10%);
+  }
+
+  &:active {
+    background-color: darken($blue, 20%);
   }
 
   &:focus {

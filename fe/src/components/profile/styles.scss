@@ -14,7 +14,8 @@
       top: 0;
       left: 0;
       transform: translate(25%, -40%);
-      transition: transform .2s ease-in-out;
+      transition: transform 0.2s ease-in-out;
+      animation: showMessage 0.2s ease-in-out;
 
       p {
         position: absolute;
@@ -43,8 +44,10 @@
     margin: 0;
   }
 
-  p {
+  p,
+  a {
     font-size: map-get($font-size, p);
+    margin: 0;
   }
 
   .buttons-group {
@@ -55,14 +58,14 @@
       position: fixed;
       top: 0;
       left: 0;
-      transform: translate(calc(50dvw - 100% - 0.5rem), 50dvh);
+      transform: translate(calc(50dvw - 100% - 0.5rem), 60dvh);
     }
 
     .dislike {
       position: fixed;
       top: 0;
       left: 0;
-      transform: translate(calc(50dvw + 0.5rem), 50dvh);
+      transform: translate(calc(50dvw + 0.5rem), 60dvh);
       background-color: rgba(65, 137, 230, .15);
       color: $blue;
       transition: transform .2s ease-in-out;
@@ -70,10 +73,10 @@
   }
 
   canvas {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 0;
+    z-index: -1;
     animation: canvasAnimation 4s ease-in-out;
     animation-fill-mode: forwards;
   }
@@ -98,5 +101,15 @@
   100% {
     transform: scale(1);
     opacity: 0;
+  }
+}
+
+@keyframes showMessage {
+  0% {
+    transform: translate(20%, -30%);
+  }
+
+  100% {
+    transform: translate(25%, -40%);
   }
 }

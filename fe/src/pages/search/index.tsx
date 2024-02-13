@@ -6,7 +6,6 @@ import useSearch from '../../hooks/useSearch';
 
 function useQuery() {
   const location = useLocation();
-  console.log('location', location);
   return new URLSearchParams(location.search);
 }
 
