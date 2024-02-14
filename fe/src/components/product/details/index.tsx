@@ -19,10 +19,10 @@ const ProductDetails = ({ product, loading }: ProductDetailsProps) => {
 
   if (product) {
     return (
-      <div className="product-details">
+      <div className="product-details" itemScope itemType="http://schema.org/Product">
         <div className="description">
           <div className="image">
-            <img role="img" src={product.picture} alt={product.title} />
+            <img itemProp="image" role="img" src={product.picture} alt={product.title} />
           </div>
           <div className="details">
             <h2>Descripcion del producto</h2>
@@ -33,7 +33,7 @@ const ProductDetails = ({ product, loading }: ProductDetailsProps) => {
           <div className="status">
             <span>{product.condition} | {product.sold_quantity} vendidos</span>
           </div>
-          <h1>{product.title}</h1>
+          <h1 itemProp="name">{product.title}</h1>
           <Price price={product.price} />
           <button className="cta">Comprar</button>
         </div>

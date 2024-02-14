@@ -16,11 +16,11 @@ const Item = (product: Product) => {
   }
 
   return (
-    <li>
-      <img src={product.picture} alt={product.title} />
+    <li role="listitem" itemScope itemType="OfferCatalog">
+      <img src={product.picture} alt={product.title} itemProp="image" />
       <div className="item-details">
         <Price price={product.price} />
-        <Link className="title" role="item-link" to={`/items/${product.id}`} title={product.title}>
+        <Link className="title" role="item-link" itemProp="name" to={`/items/${product.id}`} title={product.title}>
           <h4>{product.title}</h4>
         </Link>
         <FreeShipping show={product.free_shipping} />
@@ -36,7 +36,7 @@ const ProductList = ({ products, loading }: ProductListProps) => {
 
   if (products) {
     return (
-      <ul className="product-list">
+      <ul className="product-list" role="list" itemScope itemType="https://schema.org/OfferCatalog">
         {products.map((product: Product) => (
           <Item key={product.id} {...product} />
         ))}
