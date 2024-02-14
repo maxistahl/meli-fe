@@ -1,6 +1,5 @@
 import { Router } from 'express';
 import { getItemById, getItemsByQuery } from './controller';
-// import { ProductList } from './types';
 
 const routes = Router();
 
@@ -10,7 +9,6 @@ routes.get('/', async (request, response) => {
   return response.json(data);
 });
 
-// @ts-ignore
 routes.get('/:id', async (request, response) => {
   const { id } = request.params;
   const data = await getItemById(id);
