@@ -7,6 +7,9 @@
 
   @include respond-to(sm) {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "description"
+      "purchase";
   }
 
   .description {
